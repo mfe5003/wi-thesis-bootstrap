@@ -1,0 +1,77 @@
+\documentclass[12pt]{phys-thesis}
+
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,bindingoffset=0.2in,left=1in,right=1in,top=1in,bottom=1in,footskip=.25in]{geometry}
+
+\usepackage[style=phys]{biblatex} % biblatex with aps physics style citations
+\addbibresource{main.bib}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{dsfont} % some special charaters
+\usepackage{rotating}
+
+% tables and such
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+% header and footer stuff
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+%\usepackage{hyperref}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\pagestyle{fancy}
+% Redefine the plain page style, which chapters use
+% so that there is a number on chapter pages
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[R]{\thepage}
+}
+
+% double spacing
+\usepackage{setspace}
+\doublespacing
+
+% define how equations and figures are called in the whole document
+% i.e. Eqn or Eqn. or Equation etc...
+\newcommand{\eqn}[1]{Equation \ref{#1}}
+\newcommand{\fig}[1]{Figure \ref{#1}}
+\newcommand{\sect}[1]{Section \ref{#1}}
+
+\newcommand{\W}{\ensuremath{\mathcal{W}}}
+\newcommand{\bbar}{\ensuremath{|\bar{1}\rangle}}
+
+% dont make italicized
+\DeclareMathOperator\erf{erf}
+
+\begin{document}
+\pagenumbering{roman} % roman numerals before main content
+
+\include{abstract}
+
+\include{acknowledgements}
+
+\include{frontmatter}
+
+\pagenumbering{arabic} % arabic numerals for main content
+
+\graphicspath{{introduction/figures/}}
+\include{introduction/introduction}
+
+%\graphicspath{{apparatus/figures/}}
+%\include{apparatus/apparatus}
+
+% appendicies
+\addtocontents{toc}{\protect\contentsline{chapter}{Appendix:}{}}
+
+\appendix
+
+  \graphicspath{{app_blockadeshifts/figures/}}
+  \include{app_blockadeshifts/app_blockadeshifts}
+
+\printbibliography
+
+\end{document}

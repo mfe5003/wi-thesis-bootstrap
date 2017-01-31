@@ -192,33 +192,51 @@
   \let\footnotesize\small
   \let\footnoterule\relax
   \let \footnote \thanks
-  \null\vfil
-  \vskip 60\p@
   \begin{center}%
-    {\LARGE \@title \par}%
-    \vskip 3em%
-    {\large
-     \lineskip .75em%
-      \begin{tabular}[t]{c}%
-        \@author
-      \end{tabular}\par}%
-      \vskip 1.5em%
-    {\large \@date \par}%       % Set date in \large size.
-  \end{center}\par
-  \@thanks
+    {\LARGE\bf\expandafter{\@title}}%
+  \end{center}
+    \vfill
+  \begin{center}%
+    \rm By\\
+    {\@author}\\
+  \end{center}
+    \vfill
+  \begin{center}%
+		{\sc A dissertation submitted in partial 
+		fulfillment of \\
+		the requirements for the degree of}
+  \end{center}
+    \vfill
+  \begin{center}%
+    {\sc Doctor of Philosophy \\
+    (Physics)}
+  \end{center}
+    \vfill
+	\begin{center}
+		at the \\
+		{UNIVERSITY OF WISCONSIN -- MADISON }\\
+		%\@submitdate\\
+		\expandafter{\the\year}
+	\end{center}
+    \vfill
+    \vskip.3cm
+  {\singlespacing
+  \noindent {\rm Date of final oral examination: {\rm \oraldate}}	
+    \vskip.2cm
+	\noindent {\rm The dissertation is approved by the following members
+	 of the Final Oral Committee:}
+	\strut
+  \vbox{
+    \hbox{\hspace*{1cm}\rm \profA}
+    \hbox{\hspace*{1cm}\rm \profA}
+    \hbox{\hspace*{1cm}\rm \profA}
+    \hbox{\hspace*{1cm}\rm \profA}
+    \hbox{\hspace*{1cm}\rm \profA}
+  }}
+
   \vfil\null
   \end{titlepage}%
   \setcounter{footnote}{0}%
-  \global\let\thanks\relax
-  \global\let\maketitle\relax
-  \global\let\@thanks\@empty
-  \global\let\@author\@empty
-  \global\let\@date\@empty
-  \global\let\@title\@empty
-  \global\let\title\relax
-  \global\let\author\relax
-  \global\let\date\relax
-  \global\let\and\relax
 }
 \else
 \newcommand\maketitle{\par
@@ -452,16 +470,32 @@
                {\endlist}
 \newcommand*\descriptionlabel[1]{\hspace\labelsep
                                 \normalfont\bfseries #1}
+
+  \newenvironment{dedication}{%
+      \thispagestyle{empty}
+      \vspace*{\stretch{1}}
+      \itshape
+      \centering
+    }
+    {
+      \par
+      \vspace{\stretch{3}}
+      \clearpage
+    }
+
 \if@titlepage
   \newenvironment{abstract}{%
-      \titlepage
-      \null\vfil
-      \@beginparpenalty\@lowpenalty
-      \begin{center}%
-        \bfseries \abstractname
-        \@endparpenalty\@M
-      \end{center}}%
-     {\par\vfil\null\endtitlepage}
+    \chapter*{\abstractname
+        \@mkboth{%
+          \MakeUppercase\abstractname}{\MakeUppercase\abstractname}}}%
+%      \titlepage
+%      \null\vfil
+%      \@beginparpenalty\@lowpenalty
+%      \begin{center}%
+%        \bfseries \abstractname
+%        \@endparpenalty\@M
+%      \end{center}}%
+     {\par\vfil\null\clearpage}
 \else
   \newenvironment{abstract}{%
       \if@twocolumn
