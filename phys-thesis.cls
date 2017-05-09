@@ -228,10 +228,10 @@
 	\strut
   \vbox{
     \hbox{\hspace*{1cm}\rm \profA}
-    \hbox{\hspace*{1cm}\rm \profA}
-    \hbox{\hspace*{1cm}\rm \profA}
-    \hbox{\hspace*{1cm}\rm \profA}
-    \hbox{\hspace*{1cm}\rm \profA}
+    \hbox{\hspace*{1cm}\rm \profB}
+    \hbox{\hspace*{1cm}\rm \profC}
+    \hbox{\hspace*{1cm}\rm \profD}
+    \hbox{\hspace*{1cm}\rm \profE}
   }}
 
   \vfil\null
