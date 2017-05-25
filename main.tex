@@ -12,6 +12,9 @@
 \usepackage{dsfont} % some special charaters
 \usepackage{rotating}
 
+% for inserting stuff into toc manually
+\usepackage{tocloft}
+
 % tables and such
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -29,6 +32,14 @@
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[R]{\thepage}
+}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
 }
 
 % double spacing
@@ -65,8 +76,6 @@
 %\include{apparatus/apparatus}
 
 % appendicies
-\addtocontents{toc}{\protect\contentsline{chapter}{Appendix:}{}}
-
 \appendix
 
   \graphicspath{{app_blockadeshifts/figures/}}
